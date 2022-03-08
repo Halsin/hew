@@ -1,0 +1,8 @@
+//userテーブル(ユーザーの登録情報)
+create table user (id int AUTO_INCREMENT,name varchar(100),pass varchar(100),primary key(id));
+
+//sdgsテーブル(購入した商品の登録情報)
+create table sdgs (id int AUTO_INCREMENT,name varchar(100),price int(100),num int(100),total int(100),primary key(id));
+
+//questionテーブル(お問い合わせ内容の登録情報)
+create table question (id int AUTO_INCREMENT,question varchar(100),primary key(id));

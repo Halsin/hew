@@ -1,0 +1,257 @@
+@charset "UTF-8";
+/*リセットの設定*/
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  text-decoration: none;
+}
+
+/*グローバル設定*/
+html{
+  font-size: 62.5%;/*10px*/
+  /*scroll-behavior: smooth;*/
+}
+
+body{
+  color: #000000;
+  font-family: YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "serif";
+}
+
+h2{
+  margin: 0 2rem 0;
+  font-size: 3.6rem;
+  font-weight: normal;
+}
+
+h3{
+  margin: 1rem 0;
+  font-size: 1.8rem;
+  font-weight: normal;
+  color: #FFF;
+}
+
+p{
+  margin: 0 1rem 0;
+  font-size: 1.4rem;
+  line-height: 1.75;
+}
+
+/*大枠.wrapの設定*/
+.wrap{
+  width: 960px;
+  margin: 0 auto;
+}
+
+/*ヘッダーの設定*/
+header{
+  position: relative;
+  width: 960px;
+  height: 630px;
+}
+.logo{
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  z-index: 2;
+}
+
+/*ナビゲーションの設定*/
+.navigation{
+  position: absolute;
+  top: 400px;
+  z-index: 3;
+  width: 960px;
+  height: 50px;
+  background-color: #008000;
+}
+
+.navigation li{
+  float: left;
+  width: 25%;
+  list-style: none;
+  font-weight: bold;
+}
+
+.navigation li a{
+  display: block;
+  text-align: center;
+  line-height: 50px;
+  color: #fff;
+  font-size: 1.4rem;
+  text-decoration: none;
+  letter-spacing: 0.2rem;
+}
+
+.navigation li a:hover{
+  background-color: rgba(0,0,0,0.6);
+}
+
+/*ナビゲーション固定の設定*/
+.fixed{
+  position: fixed;
+  top: 0;
+  left: 50%;
+  width: 960px;
+  margin-left: -480px;
+}
+
+/*スライドショーの設定*/
+.slide {
+  position: relative;/*スライドする画像の入ったBOXを画像配置の基準位置にする*/
+  z-index: 1;
+  width: 100%;
+  height: 630px;
+  overflow: hidden;
+}
+
+
+.slide img {
+  position: absolute;/*.slideを基準に位置指定してすべての画像を同じ場所に重ねる*/
+  top: 50%;/*.slideの中心位置から配置する*/
+  left: 50%;/*.slideの中心位置から配置する*/
+  transform: translate(-50%, -50%);/*.slideの中心位置から.slideの左上基準に移動する*/
+  width: 100%;
+  height: auto;
+  opacity: 0;/*すべての画像の最初の不透明度を0％にして透明にする*/
+  animation :slideshow 16s linear infinite;/*「slideshow」と言う名前のアニメーションを設定する　24秒でアニメーションを繰り返す*/
+}
+
+/*「slideshow」アニメーションの進行割合に対するスタイルの変化の指定　24秒の中で不透明度を変化させている*/
+@keyframes slideshow{
+  0%{
+    opacity: 0;
+  }
+  10%{
+    opacity: 1;
+  }
+  28%{
+    opacity: 1
+  }
+  38%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 0;
+  }
+
+}
+
+/*.slideの中の二つ目の画像のアニメーションの開始を8秒遅らせて開始*/
+.slide img:nth-child(2){
+  animation-delay: 8s;
+}
+
+/*.slideの中の二つ目の画像のアニメーションの開始を16秒遅らせて開始*/
+.slide img:last-child(){
+  animation-delay: 16s;
+}
+
+/*各セクションのインナーボックスの設定*/
+  .inner{
+    padding: 10px;
+  }
+
+  /*ニュースセクションの設定*/
+  .update{
+    width: 760px;
+    margin: 0 auto;
+    font-size: 1.4rem;
+    line-height: 1.75;
+  }
+
+  .update dt{
+    float: left;
+    width: 150px;
+    padding: 7px 0 6px 3px;
+  }
+
+  .update dd{
+    padding: 7px 0 6px 6.6em;
+    border-bottom: 1px #C0C0C0 dotted;
+  }
+
+  /* メニューセクションの設定
+  .menu{
+    background-color: #A0522D;
+  } */
+
+  ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  a{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+  }
+  /*メニューセクションの設定*/
+
+  .menu ul{
+    overflow: auto;
+  }
+  .menu li{
+    float: left;
+    width: 33.33%;
+    height: 400px;
+    list-style: none;
+  }
+
+  .menu h3{
+    width: 300px;
+    color: #000;
+  }
+
+  .menu p{
+    width: 300px;
+  }
+
+  .menu img{
+    width: 300px;
+    height: auto;
+  }
+
+  .copy{
+    margin: 20px;
+    padding: 2rem 0;
+    color: #000;
+    text-align: center;
+  }
+
+  .navigation li{
+    float: left;
+    width: 25%;
+    list-style: none;
+    font-weight: bold;
+    }
+
+    section {
+        margin-top: 50px;
+    }
+
+    i {
+        width: 70px;
+        height: 70px;
+        border-radius: 10px;
+        color: #008000;
+        font-size: 50px;
+        text-align: center;
+        position: relative;
+        top: 300px;
+        left: 850px;
+        background-color: #fff;
+    }
+
+    .list i:hover {
+        background-color: rgba(0,0,0,0.6);
+    }
+    .navigation{
+    position: absolute;
+    top: 400px;
+    z-index: 3;
+    width: 960px;
+    height: 50px;
+    background-color: #008000;
+    }
